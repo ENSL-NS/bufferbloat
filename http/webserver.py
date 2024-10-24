@@ -12,5 +12,5 @@ PORT = 80
 
 Handler = CS144Handler
 httpd = SocketServer.TCPServer(("", PORT), Handler)
-print "Server1: httpd serving at port", PORT
+print("Server1: httpd serving at port", PORT)
 httpd.serve_forever()

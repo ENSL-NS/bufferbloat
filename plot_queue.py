@@ -84,7 +84,7 @@ def get_style(i):
     else:
         return {'color': 'black', 'ls': '-.'}
 
-print args.files
+print(args.files)
 m.rc('figure', figsize=(16, 6))
 fig = figure()
 ax = fig.add_subplot(111)
@@ -125,7 +125,7 @@ if args.summarise:
     plt.xticks(xaxis, args.labels)
     for x in xaxis:
         y = pc99(to_plot[x-1])
-        print x, y
+        print(x, y)
         if x == 1:
             s = '99pc: %d' % y
             offset = (-20,20)

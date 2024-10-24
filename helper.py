@@ -72,8 +72,9 @@ def stdev(lst):
 
 def xaxis(values, limit):
     l = len(values)
-    return zip(*map(lambda (x,y): (x*1.0*limit/l, y), enumerate(values)))
-
+    # return zip(*map(lambda (x,y): (x*1.0*limit/l, y), enumerate(values)))
+    return zip(*map(lambda xy: (xy[0] * 1.0 * limit / l, xy[1]), enumerate(values)))
+    
 def grouper(n, iterable, fillvalue=None):
     "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
     args = [iter(iterable)] * n
