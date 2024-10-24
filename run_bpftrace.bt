@@ -1,0 +1,8 @@
+#!/usr/bin/env bpftrace
+
+tracepoint:tcp:tcp_probe {
+    printf("%d,%d,%d.%d.%d.%d,%d.%d.%d.%d,%d,%d\n", 
+        nsecs / 1000000, args->snd_cwnd, args->saddr[0], args->saddr[1], 
+        args->saddr[2], args->saddr[3], args->daddr[0], args->daddr[1], 
+        args->daddr[2], args->daddr[3], args->sport, args->dport);
+}

@@ -12,6 +12,8 @@ def monitor_qlen(iface, interval_sec = 0.01, fname='%s/qlen.txt' % default_dir):
     while 1:
         p = Popen(cmd, shell=True, stdout=PIPE)
         output = p.stdout.read()
+        output = str(output)
+        # open('qlendebug.txt', 'a').write(output + '\n')
         # Not quite right, but will do for now
         matches = pat_queued.findall(output)
         if matches and len(matches) > 1:
@@ -19,7 +21,6 @@ def monitor_qlen(iface, interval_sec = 0.01, fname='%s/qlen.txt' % default_dir):
             t = "%f" % time()
             open(fname, 'a').write(t + ',' + matches[1] + '\n')
         sleep(interval_sec)
-    #open('qlen.txt', 'w').write('\n'.join(ret))
     return
 
 def monitor_devs_ng(fname="%s/txrate.txt" % default_dir, interval_sec=0.01):
