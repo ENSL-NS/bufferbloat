@@ -1,1 +1,1 @@
-# bufferfloat
+# The classic bufferbloat exercise, update to run on Python 3 and Ubuntu 24

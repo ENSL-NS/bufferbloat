@@ -6,10 +6,6 @@ import re
 import itertools
 import matplotlib as m
 import os
-if os.uname()[0] == "Darwin":
-   m.use("MacOSX", warn=False)
-else:
-    m.use("Agg", warn=False)
 import matplotlib.pyplot as plt
 import argparse
 import math
